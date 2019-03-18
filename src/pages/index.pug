@@ -1,0 +1,14 @@
+extends ../components/layout-default/layout-default
+include ../components/components/types/types
+include ../components/components/filter/filter
+include ../components/components/types-main/types-main
+include ../components/components/steps/steps
+
+block head
+    - var pageTitle = 'Index Page';
+
+block content
+    +types
+    +filter
+    +types-main
+    +steps

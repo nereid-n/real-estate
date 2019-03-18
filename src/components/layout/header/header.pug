@@ -1,0 +1,64 @@
+mixin header()
+  +b('header').header
+    .container
+      +e.mobile
+        a(href='/')
+          +e('img').logo(src="assets/images/logo.svg")
+        +e('button').mobile-btn.__mobile-btn-js
+          i.fa.fa-bars
+      +e.wrap.__wrap--active
+        a(href='/')
+          +e('img').logo(src="assets/images/logo.svg")
+        +e('nav').nav
+          -
+            var nav = [
+              {
+                name: 'О КОМПАНИИ'
+              },
+              {
+                name: 'НЕДВИЖИМОСТЬ',
+                items: [
+                  'item 1',
+                  'item 2'
+                ]
+              },
+              {
+                name: 'УСЛУГИ',
+                items: [
+                  'item 1',
+                  'item 2'
+                ]
+              },
+              {
+                name: 'ИНФО',
+                items: [
+                  'item 1',
+                  'item 2'
+                ]
+              },
+              {
+                name: 'НОВОСТИ'
+              },
+              {
+                name: 'КОНТАКТЫ'
+              },
+              {
+                name: 'ЗАЯВКА',
+                className: 'header__nav-link--dark'
+              }
+            ]
+          each val in nav
+            +e.nav-link(class= val.className || '')
+              a(href="#")= val.name
+              if (val.items !== undefined)
+                i.fa.fa-sort-down
+                +e.nav-dropdown
+                  each dropdown in val.items
+                    +e('a').nav-dropdown-item(href="#")= dropdown
+        +e('a').phone(href='tel:+493088920399') +49 30 889 203 99
+        +b.lang.lang-js.ml-auto
+          +e('img').img(src='assets/images/lang/ru.png')
+          i.fa.fa-sort-down
+          +e.select.__select-js
+            span(data-src='assets/images/lang/ru.png') ru
+            span(data-src='assets/images/lang/220px-Flag_of_Germany.svg.png') de

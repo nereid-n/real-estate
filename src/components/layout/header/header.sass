@@ -1,0 +1,132 @@
+@import "../../../shared/sass/imports"
+
+.header
+  padding: 24px 0
+  &__logo
+    padding-right: 20px
+  &__nav
+    padding-top: 10px
+    display: flex
+    @media (max-width: 1299px)
+      flex-direction: column
+      align-items: center
+    &-link
+      position: relative
+      padding: 8px 16px
+      color: inherit
+      font-size: 15px
+      font-weight: 600
+      text-decoration: none
+      text-transform: uppercase
+      @media (max-width: 1350px)
+        padding: 8px 14px
+      &:hover
+        .header__nav-dropdown
+          opacity: 1
+          pointer-events: all
+      a
+        color: inherit
+        text-decoration: inherit
+        &:hover
+          color: $orange
+      &--dark
+        color: $white
+        background-color: $main
+      .fa
+        position: absolute
+        right: 0
+        top: 5px
+        color: #ED1D24
+    &-dropdown
+      position: absolute
+      z-index: 10
+      left: 16px
+      top: 100%
+      display: flex
+      flex-direction: column
+      min-width: 170px
+      opacity: 0
+      transition: $transition
+      background-color: #fff
+      pointer-events: none
+      &-item
+        padding: 5px 20px
+  &__mobile
+    display: none
+    @media (max-width: 1299px)
+      display: flex
+      align-items: center
+    &-btn
+      position: fixed
+      z-index: 101
+      top: 20px
+      right: 20px
+      background-color: transparent
+      font-size: 24px
+      border: none
+  &__wrap
+    z-index: 100
+    top: 0
+    left: -100%
+    display: flex
+    align-items: center
+    background-color: #fff
+    transition: $transition
+    @media (max-width: 1299px)
+      position: fixed
+      flex-direction: column
+      min-width: 80%
+      height: 100vh
+      padding: 20px
+      box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2)
+      overflow-y: scroll
+      overflow-x: hidden
+      .lang
+        margin-left: unset
+    &--active
+      left: 0
+  &__phone
+    padding-top: 12px
+    padding-left: 30px
+    padding-right: 20px
+    color: inherit
+    text-decoration: none
+    font-size: 22px
+    font-weight: 400
+    font-family: $commons
+    @media (max-width: 1299px)
+      padding: 20px 0 10px
+    &:hover
+      color: $orange
+
+.lang
+  position: relative
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding-top: 10px
+  cursor: pointer
+  img
+    width: 24px
+    height: 21px
+    margin-bottom: -3px
+  &__select
+    position: absolute
+    top: calc(100% + 5px)
+    left: 0
+    width: 100%
+    display: none
+    border-top: 1px solid #ccc
+    background-color: #fff
+    &--active
+      display: flex
+      flex-direction: column
+      span
+        width: 100%
+        padding: 3px 0
+        text-align: center
+        cursor: pointer
+        border: 1px solid #ccc
+        border-top: none
+        &:hover
+          background-color: $orange
