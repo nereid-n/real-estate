@@ -2,3 +2,63 @@ mixin footer()
   +b('footer').footer
     .container
       +e.wrap
+        +e.item
+          +e('img').logo(src="assets/images/logo.svg")
+          +e('span').place Kurfürstendamm 45 Berlin 10719
+          +e('a').phone.mt15(href='tel:+493088920399') +49 30 889-203-99
+          +e('a').phone.mb15(href='tel:+491785198728') +49 178 519-87-28
+          a.mb5(href='mailto:info@ew-realestate.de').fz16 info@ew-realestate.de
+          span.fz16.mb5 skype: east-westrealestate
+          span.fz16 Игорь Зиберт
+          +e.social
+            +e('a').social-item(href='#')
+              i.fa.fa-facebook
+            +e('a').social-item(href='#')
+              i.fa.fa-twitter
+        +e.item
+          +e.title НАВИГАЦИЯ
+          -
+            var items = [
+              'Главная',
+              'О компании',
+              'Информация',
+              'Новости',
+              'Контакты',
+              'Заявка online'
+            ]
+          each item in items
+            +e('a').link(href='#')= item
+        +e.item
+          +e.title Услуги
+          -
+            var items = [
+              'Индивидуальный поиск и продажа недвижимости',
+              'Послепродажное обслуживание',
+              'Открытие счета в банке',
+              'Ипотечный кредит'
+            ]
+          each item in items
+            +e('a').link(href='#')= item
+        +e.item
+          +e.title Недвижимость
+          .d-flex.flex-wrap.flex-sm-nowrap
+            .d-flex.flex-column
+              -
+                var items = [
+                'Квартиры',
+                'Дома и виллы',
+                'Доходные квартиры',
+                'Доходные дома'
+                ]
+              each item in items
+                +e('a').link(href='#')= item
+            .d-flex.flex-column
+              -
+                var items = [
+                'Коммерческая недвижимость',
+                'Новостройки',
+                'Земля',
+                'Инвестиции'
+                ]
+              each item in items
+                +e('a').link(href='#')= item

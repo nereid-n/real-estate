@@ -1,4 +1,53 @@
 @import "../../../shared/sass/imports"
 
 .footer
-  &-wrap
+  min-height: 930px
+  padding: 150px 0 250px
+  color: #323233
+  background-image: url('../images/bg/15@2x.png')
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+  @media (max-width: 767px)
+    padding-top: 70px
+    background-position: 0 0
+  a
+    color: inherit
+    text-decoration: none
+    &:hover
+      color: #ffffff
+  &__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    width: calc(100% + 15px)
+  &__item
+    display: flex
+    flex-direction: column
+    margin-right: 20px
+    margin-bottom: 40px
+    &:first-of-type
+      margin-top: -20px
+    &:last-of-type
+      margin-right: 0
+  &__phone
+    font-size: 24px
+    font-family: $commons
+  &__logo
+    margin-bottom: 30px
+  &__place
+    font-size: 17px
+    font-family: $commons
+  &__social
+    margin-top: 30px
+    &-item
+      margin-right: 30px
+      font-size: 26px
+  &__title
+    margin-bottom: 25px
+    font-size: 24px
+    font-weight: 600
+  &__link
+    max-width: 250px
+    margin: 5px 30px 5px 0
+    font-size: 16px

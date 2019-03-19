@@ -1,2 +1,94 @@
+@import "../../../shared/sass/imports"
+
 .steps
-	display: block
+	padding: 50px 0 100px
+	color: #ffffff
+	background-color: $main
+	&__slider
+		padding: 60px 160px 0
+		@media (max-width: 1199px)
+			padding: 60px 100px 0
+		@media (max-width: 767px)
+			padding: 60px 0 0
+		&-btn
+			position: absolute
+			z-index: 5
+			top: 120px
+			height: 40px
+			background-color: transparent
+			border: none
+			cursor: pointer
+			@media (max-width: 767px)
+				top: 230px
+			&:hover
+				opacity: 0.5
+		&-prev
+			left: 60px
+			@media (max-width: 1199px)
+				left: 0
+		&-next
+			right: 60px
+			@media (max-width: 1199px)
+				right: 0
+	&__img
+		position: relative
+		min-width: 290px
+		max-width: 290px
+	&__number
+		position: absolute
+		top: 15px
+		right: -20px
+		color: $orange
+		font-size: 80px
+		font-family: $norms
+		@media (max-width: 767px)
+			right: 0
+	&__name
+		font-size: 20px
+	&__desc
+		line-height: 1.5
+		font-size: 16px
+	&__text
+		padding-top: 53px
+		padding-left: 40px
+		@media (max-width: 991px)
+			padding-left: 0
+	&__list
+		padding: 0
+		margin-left: 280px
+		list-style: none
+		@media (max-width: 991px)
+			margin-left: 0
+	&__li
+		display: flex
+		padding: 3px 0
+		.steps__name
+			padding-top: 6px
+		&-number
+			margin-right: 15px
+			color: #B2B2B2
+			font-size: 26px
+			font-family: $norms
+	&__link
+		position: absolute
+		left: 90px
+		top: 30px
+		width: 170px
+		color: $orange
+		text-decoration: none
+		font-size: 16px
+		@media (max-width: 991px)
+			position: static
+		&:hover
+			color: #ffffff
+	&__top
+		display: flex
+		@media (max-width: 991px)
+			flex-direction: column
+			align-items: center
+	&__bottom
+		position: relative
+		display: flex
+		margin-top: 30px
+		@media (max-width: 991px)
+			flex-direction: column

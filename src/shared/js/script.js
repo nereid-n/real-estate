@@ -8,7 +8,10 @@ $(document).ready(function() {
   $(document).on('click', '.header__mobile-btn-js', function() {
     $('.header__wrap').toggleClass('header__wrap--active');
   });
-  if (window.innerWidth < 1300) {
-    $('.header__wrap').removeClass('header__wrap--active');
+  if ($('.steps__slider').length > 0) {
+    $('.steps__slider').slick({
+      prevArrow: '<button class="steps__slider-prev steps__slider-btn"><img src="assets/images/steps/arrow-left.png"></button>',
+      nextArrow: '<button class="steps__slider-next steps__slider-btn"><img src="assets/images/steps/arrow-right.png"></button>'
+    });
   }
 });

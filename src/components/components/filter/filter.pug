@@ -1,3 +1,66 @@
 mixin filter()
 	+b.filter
-		block
+		.container
+			+e('form').wrap
+				.row
+					.col-xl-4.col-md-6
+						+e('h4').title Расположение
+						.row
+							.col-12
+								.select
+									select
+										option(disabled selected hidden) Регион
+										option item 1
+										option item 2
+							.col-sm-6
+								.select
+									select
+										option(disabled selected hidden) Город
+										option item 1
+										option item 2
+							.col-sm-6
+								.select
+									select
+										option(disabled selected hidden) Район
+										option item 1
+										option item 2
+					.col-xl-4.col-md-6
+						+e('h4').title Недвижимость
+						.row
+							.col-12
+								.select
+									select
+										option(disabled selected hidden) Выбрать недвижимость
+										option item 1
+										option item 2
+							.col-sm-6
+								.select
+									select
+										option(disabled selected hidden) Тип недвижимости
+										option item 1
+										option item 2
+							.col-sm-6
+								.select
+									select
+										option(disabled selected hidden) Вид недвижимости
+										option item 1
+										option item 2
+					.col-xl-4
+						+e('h4').title Цена
+						.row
+							.col-sm-6
+								.select
+									select
+										option(disabled selected hidden) Минимальная цена
+										option item 1
+										option item 2
+							.col-sm-6
+								input(type='text' placeholder='ID')
+							.col-sm-6
+								.select
+									select
+										option(disabled selected hidden) Максимальная цена
+										option item 1
+										option item 2
+							.col-sm-6
+								button.btn.btn-warning.width100 Поиск

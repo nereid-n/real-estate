@@ -1,3 +1,47 @@
 mixin types-main()
 	+b.types-main
-		block
+		.container
+			h2.title Жилая, элитная и доходная недвижимость в Германии
+			+e.items.row
+				-
+					var items = [
+						{
+							name: 'Квартиры',
+							img: 'assets/images/types/photo1@2x.png'
+						},
+						{
+							name: 'Дома',
+							img: 'assets/images/types/photo2@2x.png'
+						},
+						{
+							name: 'Новостройки',
+							img: 'assets/images/types/photo3@2x.png'
+						},
+						{
+							name: 'Коммерческая недвижимость',
+							img: 'assets/images/types/photo4@2x.png'
+						},
+						{
+							name: 'Доходные квартиры',
+							img: 'assets/images/types/photo5@2x.png'
+						},
+							{
+							name: 'Доходные дома',
+							img: 'assets/images/types/photo6@2x.png'
+						},
+						{
+							name: 'Земельные участки',
+							img: 'assets/images/types/photo7@2x.png'
+						},
+						{
+							name: 'Инвест-проекты',
+							img: 'assets/images/types/photo8@2x.png'
+						}
+					]
+				each item in items
+					.col-xl-3.col-md-6
+						+e.item
+							img.bg-img(src= item.img)
+							.pos-relative.d-flex.align-items-start
+								+e.name= item.name
+								+e.number.ml-auto 320
